@@ -1,0 +1,50 @@
+#+TITLE: Managrr
+#+DESCRIPTION: A spiritual successor to Requestrr, intended to have all the same funcionality, and then some
+
+** Summary
+A spiritual successor to Requestrr, intended to have all the same funcionality,
+and then some.
+
+*** Managrr aims to have the same functionality as Requestrr such as:
+- Ability to allow requests for Radarr/Sonarr/Overseerr directly from Discord
+- Role restricted commands
+- Notify users upon completion
+- Emphasis on usage with OCI Containers
+- WebGUI frontent for configuration management
+- Request multiple seasons or entire show
+- TMDB/TVDB Integration
+
+*** Managrr hopes to improve on Requestrr's functionality by:
+- Allowing removal of Radarr and Sonarr content (Role restricted)
+- Generic underlying function calls to allow for extending beyond discord (Potentially telegram, IRC, etc.)
+- Allowing for download management/status via Radarr/Sonarr 
+- Options for only allowing the user who requested specific media to be able to delete it
+- Ability to request single episodes
+
+*** Thoughts for the future:
+- IRC/Matrix/Telegram support
+- Direct download management (QBittorent, Sabnzbd, etc)
+- Voting system for Request removal/addition
+- Ability to request a redownload of the media (in case of file corruption, poor quality rips, wrong episodes being grabbed, etc)
+
+** Goals
+The primary purpose of this application is to make it
+easier for multiple people to manage your media server,
+with restricted permissions based on discord roles for what
+each user is allowed to manage. The idea is to have something
+like a "Group/Community maintained media server", where users
+can decide what to add/remove, Similar to Requestrr with extended
+functionality.
+
+** Problems to solve
+*** "Hey, can you add foo to the server? Ive really been watch it!"
+**** Solution:
+Have the user directly be able to add the media themselves, depending on their permissions
+*** "Hey, im done watching foo! You can go ahead and delete it!"
+**** Solution:
+Have the user directly be able to delete the media, depending on their permissions
+(include a setting to only allow user to be able to delete content they've requested)
+*** "Hey, I requested this movie, any idea when it might be finished?"
+**** Solution:
+Have user be able to directly view the status of the download upon request
+
