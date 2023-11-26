@@ -48,3 +48,25 @@ Have the user directly be able to delete the media, depending on their permissio
 **** Solution:
 Have user be able to directly view the status of the download upon request
 
+** Development/Build
+*** Develop with Nix Flake:
+If you already have the new package manager installed with flakes enabled,
+simply cd into the directly and run:
+#+begin_src
+nix develop
+#+end_src
+**** Installing Nix:
+Nix is a cross-platform package manager that makes it very easy to install up-to-date packages
+on any system. This also allows us to create standalone development shells seperate from our user's shell.
+
+Please refer to these two guides if you either:
+  - Dont have nix: [[https://nixos.org/download#nix-install-linux][Install Nix]]
+  - Flakes aren't enabled: [[https://www.tweag.io/blog/2020-05-25-flakes/#trying-out-flakes][Enabling Flakes]]
+*** Devlop with Direnv:
+[[https://direnv.net/docs/installation.html][Install Direnv]]
+Direnv allows a shell hook to be automatically run when entering a directory,
+using this, we can activate the nix flake's shell automaticall when entering a directory,
+and deactivate when leaving the directory. To do this, cd into the repo and run:
+#+begin_src bash
+echo "use flake" >> .envrc && direnv allow
+#+end_src
