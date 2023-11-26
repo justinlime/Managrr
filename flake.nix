@@ -21,10 +21,21 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             nodejs_20  
+            go
           ];
           shellHook = ''
+            cd ./src/webapp
+            npm install
+            cd ../..
             clear
             echo "DevShell Activated"
+          '';
+        };
+        webserver = pkgs.mkShell {
+          shellHook = ''
+            cd ./src/webapp
+            npm install
+            npm run dev
           '';
         };
       });
